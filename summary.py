@@ -13,7 +13,7 @@ summarizer = pipeline("summarization")
 def summarize_text(text, max_length=1024, summary_max_length=150):
     # Split the text into chunks that fit the model's maximum token length
     words = text.split()
-    chunk_size = max_length // 2  # Approximate size of each chunk (adjust as necessary)
+    chunk_size = max_length // 2  # Approximate size of each chunk
     chunks = [words[i:i + chunk_size] for i in range(0, len(words), chunk_size)]
     
     # Summarize each chunk
@@ -28,7 +28,7 @@ def summarize_text(text, max_length=1024, summary_max_length=150):
     return final_summary
 
 # Use the first article from the dataset as a sample
-sample_story = df['story'].iloc[0]  # Modify if you want to summarize a different story
+sample_story = df['story'].iloc[0]
 
 # Summarize the text
 summary = summarize_text(sample_story)

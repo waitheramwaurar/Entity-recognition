@@ -37,11 +37,11 @@ axes = axes.flatten()
 for i, (category, values) in enumerate(entities.items()):
     top_entities = Counter(values).most_common(5)
     labels, counts = zip(*top_entities) if top_entities else ([], [])
-    axes[i].barh(labels, counts, color="skyblue")
+    axes[i].barh(labels, counts, color="blue")
     axes[i].set_title(f"Top 5 {category}")
     axes[i].invert_yaxis()
 
 # Hide the unused subplot if odd number
-axes[-1].axis('off')
+
 plt.tight_layout()
 plt.show()

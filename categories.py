@@ -40,8 +40,8 @@ df['category_name'] = df['category'].apply(lambda x: categories[x])
 
 # Calculate the ratio of each category
 category_counts = df['category_name'].value_counts(normalize=True)  # Normalized to get the ratio
-category_ratios = category_counts.to_dict()
+# category_ratios = category_counts.to_dict()
 
 # Display the results
-print(category_ratios)
+print(category_counts)
 print(df[['story', 'category_name']].head())  # Display the first few stories with their assigned categories
